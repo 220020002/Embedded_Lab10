@@ -5,18 +5,16 @@ int series_sum(int);
 
 int main()
 {
-    int sum, i;
-
-    for (i = 1; i < 11; i++){
-        sum = series_sum(i);
-    }
+    int sum, k;
+    k = 100; // Calculating sum of first 100 numbers to force deep recursion
+    sum = series_sum(k);
     return 1;
 }
 
 int series_sum(int k)
 {
-    // Declaring 5 variables to increase stack frame size
-    volatile int a,b,c,d,e;
+    // Declaring 5 variables
+    volatile int a = 1, b = 1, c = 1, d = 1, e = 1;
 
     if (k == 1)
         return 1;
